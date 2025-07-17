@@ -1,0 +1,331 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Poppins:wght@100;400;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.birthday-container {
+          min-height: 100vh;
+          background: linear-gradient(135deg, #2d5a27 0%, #4a7c59 25%, #6b8e23 50%, #8fbc8f 75%, #98fb98 100%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          padding: 24px;
+          position: relative;
+          overflow: hidden;
+        }
+
+        /* Love pattern backgrounds */
+        .love-pattern {
+          position: absolute;
+          opacity: 0.1;
+          pointer-events: none;
+          z-index: 1;
+        }
+
+        .pattern-1 {
+          top: 10%;
+          left: 10%;
+          width: 80px;
+          height: 80px;
+          background: radial-gradient(circle, #228b22 40%, transparent 40%);
+          background-size: 15px 15px;
+          animation: pulse 3s ease-in-out infinite;
+        }
+
+        .pattern-2 {
+          top: 20%;
+          right: 15%;
+          width: 60px;
+          height: 60px;
+          background: repeating-linear-gradient(45deg, #32cd32, #32cd32 5px, transparent 5px, transparent 10px);
+          animation: rotate 10s linear infinite;
+        }
+
+        .pattern-3 {
+          bottom: 15%;
+          left: 20%;
+          width: 100px;
+          height: 100px;
+          background: conic-gradient(#90ee90, #228b22, #90ee90, #228b22);
+          border-radius: 50%;
+          animation: spin 8s linear infinite;
+        }
+
+        .pattern-4 {
+          bottom: 25%;
+          right: 10%;
+          width: 70px;
+          height: 70px;
+          background: radial-gradient(ellipse at center, #adff2f 30%, transparent 30%);
+          background-size: 20px 10px;
+          animation: pulse 4s ease-in-out infinite reverse;
+        }
+
+        /* Floating hearts animation */
+        .floating-hearts {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          z-index: 2;
+        }
+
+        .heart {
+          position: absolute;
+          font-size: 1.5rem;
+          animation: float 6s ease-in-out infinite;
+        }
+
+        .heart-1 {
+          top: 20%;
+          left: 15%;
+          animation-delay: 0s;
+        }
+
+        .heart-2 {
+          top: 30%;
+          right: 20%;
+          animation-delay: 1s;
+        }
+
+        .heart-3 {
+          bottom: 30%;
+          left: 25%;
+          animation-delay: 2s;
+        }
+
+        .heart-4 {
+          bottom: 40%;
+          right: 30%;
+          animation-delay: 3s;
+        }
+
+        .heart-5 {
+          top: 60%;
+          left: 50%;
+          animation-delay: 4s;
+        }
+
+        .heart-6 {
+          top: 15%;
+          left: 70%;
+          animation-delay: 5s;
+        }
+
+        /* Message content with love border - FIXED */
+        .message-content {
+          position: relative;
+          z-index: 3;
+          width: 100%;
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+        .love-border {
+          background: rgba(255, 255, 255, 0.95);
+          border: 3px solid #228b22;
+          border-radius: 20px;
+          padding: 40px;
+          box-shadow: 
+            0 0 20px rgba(34, 139, 34, 0.3),
+            inset 0 0 20px rgba(152, 251, 152, 0.2);
+          position: relative;
+          backdrop-filter: blur(10px);
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .love-border::before {
+          content: '';
+          position: absolute;
+          top: -5px;
+          left: -5px;
+          right: -5px;
+          bottom: -5px;
+          background: linear-gradient(45deg, #228b22, #32cd32, #90ee90, #32cd32, #228b22);
+          border-radius: 25px;
+          z-index: -1;
+          animation: rainbow-border 3s linear infinite;
+        }
+
+        /* Typewriter effect with green theme - FIXED */
+        .typewriter {
+          overflow: hidden;
+          border-right: 0.15em solid #228b22;
+          white-space: normal; /* Changed from nowrap to normal */
+          word-wrap: break-word; /* Added for better text wrapping */
+          line-height: 1.6; /* Added for better readability */
+          font-size: 1.25rem;
+          color: #2d5a27;
+          font-weight: 700;
+          font-family: 'Bitter';
+          animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+          text-shadow: 0 2px 4px rgba(45, 90, 39, 0.1);
+          margin: 0;
+          text-align: left; /* Better alignment for longer text */
+        }
+        .love-border p{
+          font-family: "Bitter";
+          font-weight: 700;
+          color: #2d5a27;
+
+        }
+
+        /* Sparkles animation */
+        .sparkles {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          z-index: 4;
+        }
+
+        .sparkle {
+          position: absolute;
+          font-size: 1.2rem;
+          color: #ffd700;
+          animation: sparkle 2s ease-in-out infinite;
+        }
+
+        .sparkle-1 {
+          top: 25%;
+          left: 10%;
+          animation-delay: 0s;
+        }
+
+        .sparkle-2 {
+          top: 35%;
+          right: 15%;
+          animation-delay: 0.5s;
+        }
+
+        .sparkle-3 {
+          bottom: 35%;
+          left: 20%;
+          animation-delay: 1s;
+        }
+
+        .sparkle-4 {
+          bottom: 25%;
+          right: 25%;
+          animation-delay: 1.5s;
+        }
+
+        .sparkle-5 {
+          top: 50%;
+          left: 80%;
+          animation-delay: 2s;
+        }
+
+        /* Animations */
+        @keyframes typing {
+          from { width: 0 }
+          to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+          from, to { border-color: transparent }
+          50% { border-color: #228b22 }
+        }
+
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          25% { transform: translateY(-20px) rotate(5deg); }
+          50% { transform: translateY(-10px) rotate(-5deg); }
+          75% { transform: translateY(-25px) rotate(3deg); }
+        }
+
+        @keyframes sparkle {
+          0%, 100% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+          50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
+        }
+
+        @keyframes pulse {
+          0%, 100% { transform: scale(1); opacity: 0.1; }
+          50% { transform: scale(1.1); opacity: 0.2; }
+        }
+
+        @keyframes rotate {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+
+        @keyframes rainbow-border {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+
+        /* Responsive design - IMPROVED */
+        @media (max-width: 768px) {
+          .birthday-container {
+            padding: 16px;
+          }
+          
+          .love-border {
+            padding: 30px 20px;
+          }
+          
+          .typewriter {
+            font-size: 1.1rem;
+          }
+          
+          .heart {
+            font-size: 1.3rem;
+          }
+          
+          .sparkle {
+            font-size: 1rem;
+          }
+          
+          .love-pattern {
+            width: 60px !important;
+            height: 60px !important;
+          }
+          
+          .message-content {
+            max-width: 100%;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .birthday-container {
+            padding: 12px;
+          }
+          
+          .typewriter {
+            font-size: 1rem;
+            line-height: 1.5;
+          }
+          
+          .love-border {
+            padding: 20px 15px;
+          }
+          
+          .heart {
+            font-size: 1.1rem;
+          }
+          
+          .love-pattern {
+            width: 40px !important;
+            height: 40px !important;
+          }
+        }
+
+        @media (max-width: 320px) {
+          .typewriter {
+            font-size: 0.9rem;
+          }
+          
+          .love-border {
+            padding: 15px 10px;
+          }
+        }

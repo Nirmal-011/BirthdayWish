@@ -1,0 +1,442 @@
+/* MemoryGallery.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.memory-gallery-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #a8e6cf 0%, #dcedc8 25%, #f1f8e9 50%, #c8e6c9 75%, #81c784 100%);
+  position: relative;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Animated Background Pattern */
+.memory-gallery-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(76, 175, 80, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139, 195, 74, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 70%, rgba(102, 187, 106, 0.1) 0%, transparent 50%);
+  animation: backgroundPulse 8s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes backgroundPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+/* Floating Hearts */
+.floating-hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.heart {
+  position: absolute;
+  color: #66bb6a;
+  font-size: 20px;
+  animation: floatUp 15s infinite linear;
+  opacity: 0;
+}
+
+.heart:nth-child(odd) {
+  color: #81c784;
+}
+
+.heart:nth-child(3n) {
+  color: #a5d6a7;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Individual heart animations */
+.heart-1 { left: 10%; animation-delay: 0s; }
+.heart-2 { left: 20%; animation-delay: 2s; }
+.heart-3 { left: 30%; animation-delay: 4s; }
+.heart-4 { left: 40%; animation-delay: 6s; }
+.heart-5 { left: 50%; animation-delay: 8s; }
+.heart-6 { left: 60%; animation-delay: 10s; }
+.heart-7 { left: 70%; animation-delay: 12s; }
+.heart-8 { left: 80%; animation-delay: 14s; }
+.heart-9 { left: 90%; animation-delay: 1s; }
+.heart-10 { left: 15%; animation-delay: 3s; }
+.heart-11 { left: 25%; animation-delay: 5s; }
+.heart-12 { left: 35%; animation-delay: 7s; }
+.heart-13 { left: 45%; animation-delay: 9s; }
+.heart-14 { left: 55%; animation-delay: 11s; }
+.heart-15 { left: 65%; animation-delay: 13s; }
+
+/* Decorative Elements */
+.decorative-elements {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.vine-pattern {
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+    transparent 0%, 
+    rgba(76, 175, 80, 0.2) 20%, 
+    rgba(139, 195, 74, 0.2) 40%, 
+    rgba(102, 187, 106, 0.2) 60%, 
+    rgba(76, 175, 80, 0.2) 80%, 
+    transparent 100%);
+  background-size: 20px 200px;
+  background-repeat: repeat-y;
+  animation: vineGrow 10s ease-in-out infinite;
+}
+
+.vine-left {
+  left: 0;
+  transform: rotate(-15deg);
+}
+
+.vine-right {
+  right: 0;
+  transform: rotate(15deg);
+}
+
+@keyframes vineGrow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+.love-birds {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+}
+
+.bird {
+  position: absolute;
+  font-size: 30px;
+  animation: flyAround 20s infinite ease-in-out;
+}
+
+.bird-1 {
+  animation-delay: 0s;
+}
+
+.bird-2 {
+  animation-delay: 10s;
+  left: 50px;
+}
+
+@keyframes flyAround {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(50px, -30px) rotate(15deg); }
+  50% { transform: translate(100px, 0) rotate(0deg); }
+  75% { transform: translate(50px, 30px) rotate(-15deg); }
+}
+
+/* Content Wrapper */
+.content-wrapper {
+  position: relative;
+  z-index: 2;
+  padding: 40px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Title Section */
+.title-section {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.main-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.title-decoration {
+  display: inline-block;
+  font-size: 2rem;
+  margin: 0 15px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #4caf50;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+/* Memory Cards */
+.memory-card {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.memory-card:hover {
+  transform: translateY(-10px);
+}
+
+.card-inner {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(139, 195, 74, 0.3);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.card-inner:hover {
+  box-shadow: 0 20px 40px rgba(76, 175, 80, 0.4);
+  border-color: #81c784;
+}
+
+.card-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(139, 195, 74, 0.1), transparent);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.card-inner:hover::before {
+  opacity: 1;
+}
+
+.image-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.memory-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.memory-card:hover .memory-image {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(76, 175, 80, 0.7), rgba(139, 195, 74, 0.7));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.memory-card:hover .image-overlay {
+  opacity: 1;
+}
+
+.overlay-hearts {
+  display: flex;
+  gap: 20px;
+  font-size: 2rem;
+  animation: heartPulse 1s infinite;
+}
+
+@keyframes heartPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.card-footer {
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #f1f8e9, #e8f5e8);
+}
+
+.memory-number {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2e7d32;
+  position: relative;
+}
+
+.memory-number::before,
+.memory-number::after {
+  content: '🌿';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+}
+
+.memory-number::before {
+  left: -30px;
+}
+
+.memory-number::after {
+  right: -30px;
+}
+
+/* Bottom Decoration */
+.bottom-decoration {
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.love-quote {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2e7d32;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: inline-block;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  border: 2px solid rgba(139, 195, 74, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.love-quote::before,
+.love-quote::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, rgba(139, 195, 74, 0.3), transparent);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: pulse 2s infinite;
+}
+
+.love-quote::before {
+  left: -25px;
+}
+
+.love-quote::after {
+  right: -25px;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translateY(-50%) scale(1); opacity: 0.7; }
+  50% { transform: translateY(-50%) scale(1.2); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2.5rem;
+  }
+  
+  .title-decoration {
+    font-size: 1.5rem;
+    margin: 0 10px;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .content-wrapper {
+    padding: 20px 15px;
+  }
+  
+  .love-quote {
+    font-size: 1.5rem;
+    padding: 15px 30px;
+  }
+  
+  .memory-number::before,
+  .memory-number::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 2rem;
+  }
+  
+  .memory-image {
+    height: 200px;
+  }
+  
+  .love-quote {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
+}

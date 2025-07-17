@@ -1,0 +1,442 @@
+/* SurpriseEnding Component Styles */
+.surprise-ending-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 25%, #81c784 50%, #66bb6a 75%, #4caf50 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Floating Hearts Animation */
+.surprise-ending-floating-hearts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.surprise-ending-heart {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.6;
+  animation: surprise-ending-float 6s ease-in-out infinite;
+}
+
+.surprise-ending-heart-1 {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.surprise-ending-heart-2 {
+  top: 20%;
+  right: 15%;
+  animation-delay: 1s;
+}
+
+.surprise-ending-heart-3 {
+  top: 60%;
+  left: 5%;
+  animation-delay: 2s;
+}
+
+.surprise-ending-heart-4 {
+  top: 70%;
+  right: 10%;
+  animation-delay: 3s;
+}
+
+.surprise-ending-heart-5 {
+  top: 30%;
+  left: 80%;
+  animation-delay: 4s;
+}
+
+.surprise-ending-heart-6 {
+  top: 50%;
+  right: 80%;
+  animation-delay: 5s;
+}
+
+.surprise-ending-heart-7 {
+  top: 80%;
+  left: 50%;
+  animation-delay: 1.5s;
+}
+
+.surprise-ending-heart-8 {
+  top: 15%;
+  left: 50%;
+  animation-delay: 2.5s;
+}
+
+@keyframes surprise-ending-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+    opacity: 1;
+  }
+}
+
+/* Love Pattern Overlay */
+.surprise-ending-love-pattern-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(76, 175, 80, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(129, 199, 132, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, rgba(102, 187, 106, 0.1) 0%, transparent 50%);
+  background-size: 200px 200px, 150px 150px, 250px 250px;
+  animation: surprise-ending-pattern-move 20s linear infinite;
+  z-index: 1;
+}
+
+@keyframes surprise-ending-pattern-move {
+  0% {
+    background-position: 0% 0%, 0% 0%, 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%, -100% 100%, 50% -50%;
+  }
+}
+
+/* Content Wrapper */
+.surprise-ending-content-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Main Title */
+.surprise-ending-main-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: #2e7d32;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  animation: surprise-ending-title-pulse 2s ease-in-out infinite;
+}
+
+.surprise-ending-title-text {
+  background: linear-gradient(45deg, #2e7d32, #4caf50, #66bb6a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.surprise-ending-title-heart {
+  display: inline-block;
+  animation: surprise-ending-heart-beat 1.5s ease-in-out infinite;
+  margin-left: 0.5rem;
+}
+
+@keyframes surprise-ending-title-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes surprise-ending-heart-beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Cards */
+.surprise-ending-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 
+    0 10px 30px rgba(76, 175, 80, 0.2),
+    0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(129, 199, 132, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.surprise-ending-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(129, 199, 132, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.surprise-ending-card:hover::before {
+  left: 100%;
+}
+
+.surprise-ending-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 15px 40px rgba(76, 175, 80, 0.3),
+    0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Headers */
+.surprise-ending-card-header {
+  margin-bottom: 1.5rem;
+}
+
+.surprise-ending-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 0.5rem;
+}
+
+.surprise-ending-love-border {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(45deg, #4caf50, #81c784);
+  margin: 0 auto;
+  border-radius: 2px;
+  position: relative;
+}
+
+.surprise-ending-love-border::before,
+.surprise-ending-love-border::after {
+  content: '💚';
+  position: absolute;
+  top: -8px;
+  font-size: 0.8rem;
+  animation: surprise-ending-border-heart-pulse 2s ease-in-out infinite;
+}
+
+.surprise-ending-love-border::before {
+  left: -15px;
+}
+
+.surprise-ending-love-border::after {
+  right: -15px;
+  animation-delay: 1s;
+}
+
+@keyframes surprise-ending-border-heart-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Video Card */
+.surprise-ending-video-wrapper {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.2);
+}
+
+.surprise-ending-video-player {
+  width: 100%;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.surprise-ending-video-player:hover {
+  transform: scale(1.02);
+}
+
+/* Promise Card */
+.surprise-ending-promise-content {
+  position: relative;
+}
+
+.surprise-ending-promise-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #2e7d32;
+  font-style: italic;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: rgba(232, 245, 232, 0.5);
+  border-radius: 10px;
+  border-left: 4px solid #4caf50;
+}
+
+.surprise-ending-promise-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.surprise-ending-decoration-heart {
+  font-size: 1.2rem;
+  animation: surprise-ending-decoration-pulse 2s ease-in-out infinite;
+}
+
+.surprise-ending-decoration-infinity {
+  font-size: 1.5rem;
+  color: #4caf50;
+  font-weight: bold;
+  animation: surprise-ending-infinity-rotate 3s linear infinite;
+}
+
+@keyframes surprise-ending-decoration-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes surprise-ending-infinity-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Gift Card */
+.surprise-ending-gift-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.surprise-ending-gift-button {
+  background: linear-gradient(45deg, #4caf50, #66bb6a, #81c784);
+  border: none;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.surprise-ending-gift-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.surprise-ending-gift-button:hover::before {
+  left: 100%;
+}
+
+.surprise-ending-gift-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+}
+
+.surprise-ending-gift-button:active {
+  transform: translateY(-1px);
+}
+
+.surprise-ending-button-text {
+  position: relative;
+  z-index: 1;
+}
+
+.surprise-ending-button-icon {
+  font-size: 1.2rem;
+  animation: surprise-ending-gift-pulse 2s ease-in-out infinite;
+}
+
+@keyframes surprise-ending-gift-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .surprise-ending-container {
+    padding: 1rem;
+  }
+  
+  .surprise-ending-main-title {
+    font-size: 2rem;
+  }
+  
+  .surprise-ending-card {
+    padding: 1.5rem;
+  }
+  
+  .surprise-ending-card-title {
+    font-size: 1.3rem;
+  }
+  
+  .surprise-ending-promise-text {
+    font-size: 1rem;
+  }
+  
+  .surprise-ending-gift-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .surprise-ending-main-title {
+    font-size: 1.5rem;
+  }
+  
+  .surprise-ending-card {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .surprise-ending-card-title {
+    font-size: 1.2rem;
+  }
+  
+  .surprise-ending-promise-text {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+}
