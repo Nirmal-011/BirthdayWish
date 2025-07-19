@@ -3,8 +3,4 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  server: {
-   host: true, // allows external access
-    allowedHosts: 'all', // allows any host (like Render or Vercel)
-  },
 })
