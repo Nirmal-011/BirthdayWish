@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import './SurpriseEnding.css'
+import video from "../assets/videos/Birthday.mp4"
 
 const SurpriseEnding = () => {
   const navigate = useNavigate()
@@ -35,7 +36,7 @@ const SurpriseEnding = () => {
           </div>
           <div className="surprise-ending-video-wrapper">
             <video controls className="surprise-ending-video-player">
-              <source src="/assets/video/memories.mp4" type="video/mp4" />
+              <source src={video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
